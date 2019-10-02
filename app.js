@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', indexRouter);
 
 app.listen(3030, () => {
-  console.log("Server running on port 3000");
+  console.log("Server running on port 3030");
  });
 
 module.exports = app;
