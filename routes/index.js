@@ -9,16 +9,16 @@ router.get('/', function(req, res, next) {
   res.send('Service Online');
 });
 
-router.get('/downloadLab', function(req, res, next) {
-  zipFolder(folderpath, zipPath, function(err) {
+router.get('/downloadLab', async function(req, res, next) {
+  await zipFolder(folderpath, zipPath, function(err) {
     if(err) {
       res.send('Error generating zip: ' + err);
-    } else {
-      res.download(folderpath + '/archive.zip');
+      res.end;
+    } else{
+      res.download(zipPath);
+      res.end;
     }
   });
-
-    res.end;
 });
 
 module.exports = router;
