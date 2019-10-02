@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
     res.end;
 });
 
-router.get('/check', function(req, res, next) {
+router.get('/downloadLab', function(req, res, next) {
     res.send('running');
     res.end;
 });
